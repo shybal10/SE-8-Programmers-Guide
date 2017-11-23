@@ -1,12 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-/**
- * class shows the implementation of a stack
- * @author shybal
- * @version 1.0
- */
-public class CharStack {
+public class PrintableCharStack extends CharStack {
     /**
      * client method to display execution
      * @param args remains unused
@@ -15,7 +10,7 @@ public class CharStack {
         System.out.println("enter the stack capacity");
         Scanner input = new Scanner(System.in);
         int capacity = input.nextInt();
-        CharStack stack = new CharStack(capacity);
+        PrintableCharStack stack = new PrintableCharStack(capacity);
         while (true) {
             System.out.println("your options are:");
             System.out.println("1.push\t2.pop\t3.peek\t4.isFull\t5.isEmpty\t6.Display\t7.Exit");
@@ -44,49 +39,20 @@ public class CharStack {
                     System.out.println("not full");
                 }
                     break;
-                case 6 : System.out.println(Arrays.toString(stack.array));
+                case 6 : stack.printStackElements();
                     break;
                 case 7 : return;
             }
         }
     }
-    char[] array;      //represent the stack
-    private int stackTop;      //represents the index of the top element of the stack
-    private static int counter;  //keeps count of the number of stacks created;
-    CharStack(int capacity){
-        this.array = new char[capacity];
-        this.stackTop = -1;
-        counter++;
+    private PrintableCharStack(int capacity) {
+        super(capacity);
     }
 
     /**
-     * adds an element to the stack
-     * @param element is of the type char
+     * displays all the elements of the stack
      */
-     void push(char element){ this.array[++this.stackTop] = element; }
-
-    /**
-     * removes the top element from the stack
-     * @return element of the type char
-     */
-     char pop(){ return this.array[this.stackTop--]; }
-
-    /**
-     * displays the top element of the stack
-     * @return element of the type char
-     */
-     char peek(){ return this.array[this.stackTop]; }
-
-    /**
-     * checks if the stack is empty
-     * @return true if the stack is empty
-     */
-     boolean isEmpty(){ return this.stackTop == -1; }
-
-    /**
-     * checks if the stack is full
-     * @return true if the stack is full
-     */
-    boolean isFull(){ return this.stackTop == this.array.length-1; }
-
+    private void printStackElements(){
+        System.out.println(Arrays.toString(array));
+    }
 }
