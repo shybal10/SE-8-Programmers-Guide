@@ -26,3 +26,4 @@ out/
 src/
 !/.gitignore
 /SE-8-Programmers-Guide/.gitignore
+!/StackImplementation/
