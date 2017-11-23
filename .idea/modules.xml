@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SE 8 Programmers Guide.iml" filepath="$PROJECT_DIR$/SE 8 Programmers Guide.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StackImplementation/StackImplementation.iml" filepath="$PROJECT_DIR$/StackImplementation/StackImplementation.iml" />
     </modules>
   </component>
 </project>
